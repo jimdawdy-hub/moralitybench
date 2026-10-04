@@ -1,0 +1,2616 @@
+{
+  "version": "five-runs-2026-10-04",
+  "original_run": 1,
+  "new_runs": [
+    2,
+    3,
+    4,
+    5
+  ],
+  "agreement_definition": "Exact rating matches divided by available item comparisons across all ten pairs of five runs; missing ratings excluded, never counted as matches.",
+  "distance_definition": "Arithmetic mean of the five per-run mean absolute distances across the six foundation scores; not distance from the averaged profile.",
+  "score_definition": "Foundation and EPQ values are arithmetic means of five per-run scores. Available items form each per-run score. Each run has equal weight.",
+  "classification_definition": "Midpoint classification of mean EPQ scores; >= 5 is high. Categories for individual runs are retained.",
+  "primary_parser": "Original first digit, restricted to instrument range. Jev uses Python round(score) + 1, clipped to instrument range.",
+  "foundations": [
+    "Care",
+    "Equality",
+    "Proportionality",
+    "Loyalty",
+    "Authority",
+    "Purity"
+  ],
+  "human_norms": [
+    4.05,
+    2.88,
+    3.63,
+    2.81,
+    3.01,
+    2.26
+  ],
+  "models": [
+    {
+      "name": "DeepSeek V4.1 Flash",
+      "provider": "DeepSeek",
+      "color": "#0d9488",
+      "agreement": 71.76258992805755,
+      "matched_pairs": 399,
+      "compared_pairs": 556,
+      "possible_pairs": 560,
+      "all_five_observed_items": 55,
+      "all_five_identical_items": 27,
+      "all_five_identical_percent": 49.09090909090909,
+      "numeric": 279,
+      "scheduled": 280,
+      "missing": 1,
+      "distance": 0.23933333333333323,
+      "distance_min": 0.14222222222222225,
+      "distance_max": 0.3122222222222221,
+      "distance_sd": 0.07074384325172532,
+      "foundations": [
+        4.333333333333333,
+        2.5,
+        3.433333333333333,
+        2.7333333333333334,
+        2.9,
+        2.0
+      ],
+      "idealism": 5.08,
+      "relativism": 5.193333333333333,
+      "ideology": "Situationist",
+      "categories_by_run": [
+        "Situationist",
+        "Subjectivist",
+        "Absolutist",
+        "Exceptionist",
+        "Subjectivist"
+      ],
+      "category_counts": {
+        "Situationist": 1,
+        "Subjectivist": 2,
+        "Absolutist": 1,
+        "Exceptionist": 1
+      },
+      "category_changed": true,
+      "runs": [
+        {
+          "run": 1,
+          "foundations": {
+            "Care": 4.333333333333333,
+            "Equality": 2.6666666666666665,
+            "Proportionality": 3.5,
+            "Loyalty": 2.6666666666666665,
+            "Authority": 3,
+            "Purity": 2.3333333333333335
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 6,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.14222222222222225,
+          "idealism": 5.3,
+          "relativism": 5.7,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Situationist",
+          "numeric": 56
+        },
+        {
+          "run": 2,
+          "foundations": {
+            "Care": 4.333333333333333,
+            "Equality": 2.5,
+            "Proportionality": 3.3333333333333335,
+            "Loyalty": 2.8333333333333335,
+            "Authority": 3,
+            "Purity": 2
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 6,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.20888888888888876,
+          "idealism": 4.9,
+          "relativism": 5.8,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Subjectivist",
+          "numeric": 56
+        },
+        {
+          "run": 3,
+          "foundations": {
+            "Care": 4.333333333333333,
+            "Equality": 2.6666666666666665,
+            "Proportionality": 3.5,
+            "Loyalty": 2.5,
+            "Authority": 2.8333333333333335,
+            "Purity": 2
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 6,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.22888888888888878,
+          "idealism": 5.4,
+          "relativism": 4.7,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Absolutist",
+          "numeric": 56
+        },
+        {
+          "run": 4,
+          "foundations": {
+            "Care": 4.333333333333333,
+            "Equality": 2.3333333333333335,
+            "Proportionality": 3.6666666666666665,
+            "Loyalty": 3,
+            "Authority": 2.8333333333333335,
+            "Purity": 1.6666666666666667
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 6,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.30444444444444424,
+          "idealism": 4.9,
+          "relativism": 4.666666666666667,
+          "epq_counts": [
+            10,
+            9
+          ],
+          "category": "Exceptionist",
+          "numeric": 55
+        },
+        {
+          "run": 5,
+          "foundations": {
+            "Care": 4.333333333333333,
+            "Equality": 2.3333333333333335,
+            "Proportionality": 3.1666666666666665,
+            "Loyalty": 2.6666666666666665,
+            "Authority": 2.8333333333333335,
+            "Purity": 2
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 6,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.3122222222222221,
+          "idealism": 4.9,
+          "relativism": 5.1,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Subjectivist",
+          "numeric": 56
+        }
+      ],
+      "rank": 1
+    },
+    {
+      "name": "MiMo v2.6 Pro",
+      "provider": "Xiaomi",
+      "color": "#7c3aed",
+      "agreement": 82.5,
+      "matched_pairs": 462,
+      "compared_pairs": 560,
+      "possible_pairs": 560,
+      "all_five_observed_items": 56,
+      "all_five_identical_items": 39,
+      "all_five_identical_percent": 69.64285714285714,
+      "numeric": 280,
+      "scheduled": 280,
+      "missing": 0,
+      "distance": 0.25266666666666665,
+      "distance_min": 0.20666666666666664,
+      "distance_max": 0.27777777777777773,
+      "distance_sd": 0.02968559529302443,
+      "foundations": [
+        4,
+        2.6666666666666665,
+        3.5666666666666664,
+        2.8333333333333335,
+        3.033333333333333,
+        3.3
+      ],
+      "idealism": 5.28,
+      "relativism": 4.94,
+      "ideology": "Absolutist",
+      "categories_by_run": [
+        "Absolutist",
+        "Absolutist",
+        "Absolutist",
+        "Situationist",
+        "Absolutist"
+      ],
+      "category_counts": {
+        "Absolutist": 4,
+        "Situationist": 1
+      },
+      "category_changed": true,
+      "runs": [
+        {
+          "run": 1,
+          "foundations": {
+            "Care": 4,
+            "Equality": 2.5,
+            "Proportionality": 3.5,
+            "Loyalty": 2.8333333333333335,
+            "Authority": 3,
+            "Purity": 3.3333333333333335
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 6,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.27777777777777773,
+          "idealism": 5.1,
+          "relativism": 4.8,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Absolutist",
+          "numeric": 56
+        },
+        {
+          "run": 2,
+          "foundations": {
+            "Care": 4,
+            "Equality": 2.6666666666666665,
+            "Proportionality": 3.6666666666666665,
+            "Loyalty": 2.8333333333333335,
+            "Authority": 3,
+            "Purity": 3.1666666666666665
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 6,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.20666666666666664,
+          "idealism": 5.3,
+          "relativism": 4.9,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Absolutist",
+          "numeric": 56
+        },
+        {
+          "run": 3,
+          "foundations": {
+            "Care": 4,
+            "Equality": 2.6666666666666665,
+            "Proportionality": 3.5,
+            "Loyalty": 2.8333333333333335,
+            "Authority": 3,
+            "Purity": 3.5
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 6,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.27777777777777773,
+          "idealism": 5.3,
+          "relativism": 4.7,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Absolutist",
+          "numeric": 56
+        },
+        {
+          "run": 4,
+          "foundations": {
+            "Care": 4,
+            "Equality": 2.8333333333333335,
+            "Proportionality": 3.6666666666666665,
+            "Loyalty": 3,
+            "Authority": 3.1666666666666665,
+            "Purity": 3.3333333333333335
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 6,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.2588888888888889,
+          "idealism": 5.4,
+          "relativism": 5.4,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Situationist",
+          "numeric": 56
+        },
+        {
+          "run": 5,
+          "foundations": {
+            "Care": 4,
+            "Equality": 2.6666666666666665,
+            "Proportionality": 3.5,
+            "Loyalty": 2.6666666666666665,
+            "Authority": 3,
+            "Purity": 3.1666666666666665
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 6,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.2422222222222222,
+          "idealism": 5.3,
+          "relativism": 4.9,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Absolutist",
+          "numeric": 56
+        }
+      ],
+      "rank": 2
+    },
+    {
+      "name": "Nemotron 3 Ultra 550B",
+      "provider": "NVIDIA",
+      "color": "#b45309",
+      "agreement": 60.431654676258994,
+      "matched_pairs": 336,
+      "compared_pairs": 556,
+      "possible_pairs": 560,
+      "all_five_observed_items": 55,
+      "all_five_identical_items": 16,
+      "all_five_identical_percent": 29.09090909090909,
+      "numeric": 279,
+      "scheduled": 280,
+      "missing": 1,
+      "distance": 0.33644444444444443,
+      "distance_min": 0.1777777777777778,
+      "distance_max": 0.431111111111111,
+      "distance_sd": 0.10351060063802371,
+      "foundations": [
+        4.4,
+        2.54,
+        3.6,
+        2.5,
+        2.8333333333333335,
+        2.4333333333333336
+      ],
+      "idealism": 5.44,
+      "relativism": 5.16,
+      "ideology": "Situationist",
+      "categories_by_run": [
+        "Situationist",
+        "Situationist",
+        "Situationist",
+        "Situationist",
+        "Situationist"
+      ],
+      "category_counts": {
+        "Situationist": 5
+      },
+      "category_changed": false,
+      "runs": [
+        {
+          "run": 1,
+          "foundations": {
+            "Care": 4.166666666666667,
+            "Equality": 2.6666666666666665,
+            "Proportionality": 3.5,
+            "Loyalty": 3,
+            "Authority": 2.8333333333333335,
+            "Purity": 2.5
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 6,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.1777777777777778,
+          "idealism": 5.8,
+          "relativism": 5,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Situationist",
+          "numeric": 56
+        },
+        {
+          "run": 2,
+          "foundations": {
+            "Care": 4.166666666666667,
+            "Equality": 2.6666666666666665,
+            "Proportionality": 4.166666666666667,
+            "Loyalty": 2.1666666666666665,
+            "Authority": 3,
+            "Purity": 1.8333333333333333
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 6,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.3244444444444446,
+          "idealism": 5.5,
+          "relativism": 5.3,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Situationist",
+          "numeric": 56
+        },
+        {
+          "run": 3,
+          "foundations": {
+            "Care": 4.833333333333333,
+            "Equality": 2.6666666666666665,
+            "Proportionality": 3.5,
+            "Loyalty": 3,
+            "Authority": 2.3333333333333335,
+            "Purity": 2.8333333333333335
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 6,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.42777777777777776,
+          "idealism": 5.4,
+          "relativism": 5,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Situationist",
+          "numeric": 56
+        },
+        {
+          "run": 4,
+          "foundations": {
+            "Care": 4.833333333333333,
+            "Equality": 2.5,
+            "Proportionality": 3.8333333333333335,
+            "Loyalty": 2.3333333333333335,
+            "Authority": 3,
+            "Purity": 2.3333333333333335
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 6,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.3211111111111111,
+          "idealism": 5.2,
+          "relativism": 5.3,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Situationist",
+          "numeric": 56
+        },
+        {
+          "run": 5,
+          "foundations": {
+            "Care": 4,
+            "Equality": 2.2,
+            "Proportionality": 3,
+            "Loyalty": 2,
+            "Authority": 3,
+            "Purity": 2.6666666666666665
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 5,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.431111111111111,
+          "idealism": 5.3,
+          "relativism": 5.2,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Situationist",
+          "numeric": 55
+        }
+      ],
+      "rank": 3
+    },
+    {
+      "name": "GPT-6.1 Sol",
+      "provider": "OpenAI",
+      "color": "#a16207",
+      "agreement": 80.53571428571429,
+      "matched_pairs": 451,
+      "compared_pairs": 560,
+      "possible_pairs": 560,
+      "all_five_observed_items": 56,
+      "all_five_identical_items": 36,
+      "all_five_identical_percent": 64.28571428571429,
+      "numeric": 280,
+      "scheduled": 280,
+      "missing": 0,
+      "distance": 0.34044444444444444,
+      "distance_min": 0.27777777777777773,
+      "distance_max": 0.3888888888888889,
+      "distance_sd": 0.04108557765637508,
+      "foundations": [
+        4.333333333333333,
+        2.3,
+        3.3333333333333335,
+        2.6,
+        3.1666666666666665,
+        2.7666666666666666
+      ],
+      "idealism": 4.4399999999999995,
+      "relativism": 4.76,
+      "ideology": "Exceptionist",
+      "categories_by_run": [
+        "Exceptionist",
+        "Exceptionist",
+        "Exceptionist",
+        "Exceptionist",
+        "Exceptionist"
+      ],
+      "category_counts": {
+        "Exceptionist": 5
+      },
+      "category_changed": false,
+      "runs": [
+        {
+          "run": 1,
+          "foundations": {
+            "Care": 4.333333333333333,
+            "Equality": 2.1666666666666665,
+            "Proportionality": 3.3333333333333335,
+            "Loyalty": 2.5,
+            "Authority": 3.1666666666666665,
+            "Purity": 2.8333333333333335
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 6,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.3888888888888889,
+          "idealism": 4.8,
+          "relativism": 4.8,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Exceptionist",
+          "numeric": 56
+        },
+        {
+          "run": 2,
+          "foundations": {
+            "Care": 4.333333333333333,
+            "Equality": 2.1666666666666665,
+            "Proportionality": 3.3333333333333335,
+            "Loyalty": 2.6666666666666665,
+            "Authority": 3.1666666666666665,
+            "Purity": 2.8333333333333335
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 6,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.36111111111111116,
+          "idealism": 4.1,
+          "relativism": 4.7,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Exceptionist",
+          "numeric": 56
+        },
+        {
+          "run": 3,
+          "foundations": {
+            "Care": 4.333333333333333,
+            "Equality": 2.1666666666666665,
+            "Proportionality": 3.3333333333333335,
+            "Loyalty": 2.8333333333333335,
+            "Authority": 3.1666666666666665,
+            "Purity": 2.8333333333333335
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 6,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.34111111111111114,
+          "idealism": 4.8,
+          "relativism": 4.8,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Exceptionist",
+          "numeric": 56
+        },
+        {
+          "run": 4,
+          "foundations": {
+            "Care": 4.333333333333333,
+            "Equality": 2.5,
+            "Proportionality": 3.3333333333333335,
+            "Loyalty": 2.5,
+            "Authority": 3.1666666666666665,
+            "Purity": 2.5
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 6,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.27777777777777773,
+          "idealism": 4.3,
+          "relativism": 4.6,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Exceptionist",
+          "numeric": 56
+        },
+        {
+          "run": 5,
+          "foundations": {
+            "Care": 4.333333333333333,
+            "Equality": 2.5,
+            "Proportionality": 3.3333333333333335,
+            "Loyalty": 2.5,
+            "Authority": 3.1666666666666665,
+            "Purity": 2.8333333333333335
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 6,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.3333333333333333,
+          "idealism": 4.2,
+          "relativism": 4.9,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Exceptionist",
+          "numeric": 56
+        }
+      ],
+      "rank": 4
+    },
+    {
+      "name": "Gemini 3.8 Flash",
+      "provider": "Google",
+      "color": "#2563eb",
+      "agreement": 85.25519848771266,
+      "matched_pairs": 451,
+      "compared_pairs": 529,
+      "possible_pairs": 560,
+      "all_five_observed_items": 51,
+      "all_five_identical_items": 36,
+      "all_five_identical_percent": 70.58823529411765,
+      "numeric": 269,
+      "scheduled": 280,
+      "missing": 11,
+      "distance": 0.37888888888888883,
+      "distance_min": 0.29777777777777775,
+      "distance_max": 0.4922222222222221,
+      "distance_sd": 0.09617371114836618,
+      "foundations": [
+        3.566666666666667,
+        2.486666666666667,
+        2.606666666666667,
+        2.6333333333333333,
+        2.933333333333333,
+        2.2666666666666666
+      ],
+      "idealism": 4.14,
+      "relativism": 4.58,
+      "ideology": "Exceptionist",
+      "categories_by_run": [
+        "Exceptionist",
+        "Exceptionist",
+        "Exceptionist",
+        "Exceptionist",
+        "Exceptionist"
+      ],
+      "category_counts": {
+        "Exceptionist": 5
+      },
+      "category_changed": false,
+      "runs": [
+        {
+          "run": 1,
+          "foundations": {
+            "Care": 3.5,
+            "Equality": 2.5,
+            "Proportionality": 3,
+            "Loyalty": 2.6666666666666665,
+            "Authority": 3,
+            "Purity": 2.3333333333333335
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 4,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.29777777777777775,
+          "idealism": 4.1,
+          "relativism": 4.6,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Exceptionist",
+          "numeric": 54
+        },
+        {
+          "run": 2,
+          "foundations": {
+            "Care": 3.3333333333333335,
+            "Equality": 2.6,
+            "Proportionality": 2.2,
+            "Loyalty": 2.6666666666666665,
+            "Authority": 3,
+            "Purity": 2
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 5,
+            "Proportionality": 5,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.47333333333333316,
+          "idealism": 4.3,
+          "relativism": 4.2,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Exceptionist",
+          "numeric": 54
+        },
+        {
+          "run": 3,
+          "foundations": {
+            "Care": 3.8333333333333335,
+            "Equality": 2.5,
+            "Proportionality": 2.6666666666666665,
+            "Loyalty": 2.8333333333333335,
+            "Authority": 2.6666666666666665,
+            "Purity": 2.3333333333333335
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 4,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.3333333333333333,
+          "idealism": 3.8,
+          "relativism": 4.9,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Exceptionist",
+          "numeric": 54
+        },
+        {
+          "run": 4,
+          "foundations": {
+            "Care": 3.5,
+            "Equality": 2.3333333333333335,
+            "Proportionality": 2.3333333333333335,
+            "Loyalty": 2.3333333333333335,
+            "Authority": 3,
+            "Purity": 2.3333333333333335
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 3,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.4922222222222221,
+          "idealism": 4.2,
+          "relativism": 4.6,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Exceptionist",
+          "numeric": 53
+        },
+        {
+          "run": 5,
+          "foundations": {
+            "Care": 3.6666666666666665,
+            "Equality": 2.5,
+            "Proportionality": 2.8333333333333335,
+            "Loyalty": 2.6666666666666665,
+            "Authority": 3,
+            "Purity": 2.3333333333333335
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 4,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.29777777777777775,
+          "idealism": 4.3,
+          "relativism": 4.6,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Exceptionist",
+          "numeric": 54
+        }
+      ],
+      "rank": 5
+    },
+    {
+      "name": "Qwen3.8 27B",
+      "provider": "Alibaba Cloud",
+      "color": "#be123c",
+      "agreement": 86.07142857142857,
+      "matched_pairs": 482,
+      "compared_pairs": 560,
+      "possible_pairs": 560,
+      "all_five_observed_items": 56,
+      "all_five_identical_items": 41,
+      "all_five_identical_percent": 73.21428571428571,
+      "numeric": 280,
+      "scheduled": 280,
+      "missing": 0,
+      "distance": 0.38044444444444453,
+      "distance_min": 0.35333333333333344,
+      "distance_max": 0.39666666666666667,
+      "distance_sd": 0.019698342350513254,
+      "foundations": [
+        4.633333333333334,
+        2.966666666666667,
+        3.6666666666666665,
+        3.033333333333333,
+        3.1,
+        3.4333333333333336
+      ],
+      "idealism": 5.4799999999999995,
+      "relativism": 4.94,
+      "ideology": "Absolutist",
+      "categories_by_run": [
+        "Absolutist",
+        "Situationist",
+        "Situationist",
+        "Absolutist",
+        "Absolutist"
+      ],
+      "category_counts": {
+        "Absolutist": 3,
+        "Situationist": 2
+      },
+      "category_changed": true,
+      "runs": [
+        {
+          "run": 1,
+          "foundations": {
+            "Care": 4.666666666666667,
+            "Equality": 3,
+            "Proportionality": 3.6666666666666665,
+            "Loyalty": 3,
+            "Authority": 3.1666666666666665,
+            "Purity": 3.3333333333333335
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 6,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.3655555555555557,
+          "idealism": 5.1,
+          "relativism": 4.9,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Absolutist",
+          "numeric": 56
+        },
+        {
+          "run": 2,
+          "foundations": {
+            "Care": 4.666666666666667,
+            "Equality": 2.8333333333333335,
+            "Proportionality": 3.6666666666666665,
+            "Loyalty": 3,
+            "Authority": 3.1666666666666665,
+            "Purity": 3.3333333333333335
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 6,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.35333333333333344,
+          "idealism": 5.6,
+          "relativism": 5.2,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Situationist",
+          "numeric": 56
+        },
+        {
+          "run": 3,
+          "foundations": {
+            "Care": 4.5,
+            "Equality": 3,
+            "Proportionality": 3.6666666666666665,
+            "Loyalty": 3.1666666666666665,
+            "Authority": 2.8333333333333335,
+            "Purity": 3.5
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 6,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.39666666666666667,
+          "idealism": 5.7,
+          "relativism": 5.1,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Situationist",
+          "numeric": 56
+        },
+        {
+          "run": 4,
+          "foundations": {
+            "Care": 4.666666666666667,
+            "Equality": 3,
+            "Proportionality": 3.6666666666666665,
+            "Loyalty": 3,
+            "Authority": 3.1666666666666665,
+            "Purity": 3.5
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 6,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.3933333333333335,
+          "idealism": 5.5,
+          "relativism": 4.8,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Absolutist",
+          "numeric": 56
+        },
+        {
+          "run": 5,
+          "foundations": {
+            "Care": 4.666666666666667,
+            "Equality": 3,
+            "Proportionality": 3.6666666666666665,
+            "Loyalty": 3,
+            "Authority": 3.1666666666666665,
+            "Purity": 3.5
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 6,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.3933333333333335,
+          "idealism": 5.5,
+          "relativism": 4.7,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Absolutist",
+          "numeric": 56
+        }
+      ],
+      "rank": 6
+    },
+    {
+      "name": "Claude Opus 5.5",
+      "provider": "Anthropic",
+      "color": "#c026d3",
+      "agreement": 90.61913696060037,
+      "matched_pairs": 483,
+      "compared_pairs": 533,
+      "possible_pairs": 560,
+      "all_five_observed_items": 53,
+      "all_five_identical_items": 43,
+      "all_five_identical_percent": 81.13207547169812,
+      "numeric": 270,
+      "scheduled": 280,
+      "missing": 10,
+      "distance": 0.4024444444444445,
+      "distance_min": 0.3277777777777778,
+      "distance_max": 0.4694444444444445,
+      "distance_sd": 0.05117839773832051,
+      "foundations": [
+        4.5,
+        2.22,
+        3.2333333333333334,
+        2.7333333333333334,
+        3.0,
+        3
+      ],
+      "idealism": 4.92,
+      "relativism": 4.1,
+      "ideology": "Exceptionist",
+      "categories_by_run": [
+        "Exceptionist",
+        "Exceptionist",
+        "Exceptionist",
+        "Exceptionist",
+        "Absolutist"
+      ],
+      "category_counts": {
+        "Exceptionist": 4,
+        "Absolutist": 1
+      },
+      "category_changed": true,
+      "runs": [
+        {
+          "run": 1,
+          "foundations": {
+            "Care": 4.5,
+            "Equality": 1.75,
+            "Proportionality": 3.1666666666666665,
+            "Loyalty": 2.8333333333333335,
+            "Authority": 3,
+            "Purity": 3
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 4,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.4694444444444445,
+          "idealism": 4.9,
+          "relativism": 4.2,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Exceptionist",
+          "numeric": 54
+        },
+        {
+          "run": 2,
+          "foundations": {
+            "Care": 4.5,
+            "Equality": 2.5,
+            "Proportionality": 3.1666666666666665,
+            "Loyalty": 2.6666666666666665,
+            "Authority": 2.8333333333333335,
+            "Purity": 3
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 4,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.39222222222222225,
+          "idealism": 4.9,
+          "relativism": 4,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Exceptionist",
+          "numeric": 54
+        },
+        {
+          "run": 3,
+          "foundations": {
+            "Care": 4.5,
+            "Equality": 2,
+            "Proportionality": 3.3333333333333335,
+            "Loyalty": 2.6666666666666665,
+            "Authority": 3,
+            "Purity": 3
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 3,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.42,
+          "idealism": 4.9,
+          "relativism": 4.1,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Exceptionist",
+          "numeric": 53
+        },
+        {
+          "run": 4,
+          "foundations": {
+            "Care": 4.5,
+            "Equality": 2.6,
+            "Proportionality": 3.1666666666666665,
+            "Loyalty": 2.8333333333333335,
+            "Authority": 3,
+            "Purity": 3
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 5,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.3277777777777778,
+          "idealism": 4.9,
+          "relativism": 4.1,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Exceptionist",
+          "numeric": 55
+        },
+        {
+          "run": 5,
+          "foundations": {
+            "Care": 4.5,
+            "Equality": 2.25,
+            "Proportionality": 3.3333333333333335,
+            "Loyalty": 2.6666666666666665,
+            "Authority": 3.1666666666666665,
+            "Purity": 3
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 4,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.40277777777777785,
+          "idealism": 5,
+          "relativism": 4.1,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Absolutist",
+          "numeric": 54
+        }
+      ],
+      "rank": 7
+    },
+    {
+      "name": "Grok 4.7",
+      "provider": "xAI",
+      "color": "#4f46e5",
+      "agreement": 63.214285714285715,
+      "matched_pairs": 354,
+      "compared_pairs": 560,
+      "possible_pairs": 560,
+      "all_five_observed_items": 56,
+      "all_five_identical_items": 19,
+      "all_five_identical_percent": 33.92857142857143,
+      "numeric": 280,
+      "scheduled": 280,
+      "missing": 0,
+      "distance": 0.4128888888888888,
+      "distance_min": 0.2655555555555556,
+      "distance_max": 0.5233333333333332,
+      "distance_sd": 0.10850442330404413,
+      "foundations": [
+        4.433333333333334,
+        1.8333333333333333,
+        3.533333333333333,
+        2.2666666666666666,
+        2.8333333333333335,
+        2.3666666666666667
+      ],
+      "idealism": 5.46,
+      "relativism": 4.34,
+      "ideology": "Absolutist",
+      "categories_by_run": [
+        "Absolutist",
+        "Absolutist",
+        "Absolutist",
+        "Absolutist",
+        "Absolutist"
+      ],
+      "category_counts": {
+        "Absolutist": 5
+      },
+      "category_changed": false,
+      "runs": [
+        {
+          "run": 1,
+          "foundations": {
+            "Care": 4.833333333333333,
+            "Equality": 1.5,
+            "Proportionality": 3.6666666666666665,
+            "Loyalty": 2.3333333333333335,
+            "Authority": 3,
+            "Purity": 2.6666666666666665
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 6,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.5155555555555554,
+          "idealism": 5.5,
+          "relativism": 4,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Absolutist",
+          "numeric": 56
+        },
+        {
+          "run": 2,
+          "foundations": {
+            "Care": 4.166666666666667,
+            "Equality": 2.1666666666666665,
+            "Proportionality": 3.6666666666666665,
+            "Loyalty": 2.5,
+            "Authority": 2.8333333333333335,
+            "Purity": 2.5
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 6,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.2655555555555556,
+          "idealism": 5.4,
+          "relativism": 4.4,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Absolutist",
+          "numeric": 56
+        },
+        {
+          "run": 3,
+          "foundations": {
+            "Care": 4.5,
+            "Equality": 2,
+            "Proportionality": 3.5,
+            "Loyalty": 2.3333333333333335,
+            "Authority": 2.8333333333333335,
+            "Purity": 2.3333333333333335
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 6,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.3644444444444444,
+          "idealism": 5.6,
+          "relativism": 4.8,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Absolutist",
+          "numeric": 56
+        },
+        {
+          "run": 4,
+          "foundations": {
+            "Care": 4.666666666666667,
+            "Equality": 2,
+            "Proportionality": 3.5,
+            "Loyalty": 2.3333333333333335,
+            "Authority": 2.8333333333333335,
+            "Purity": 2.1666666666666665
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 6,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.3955555555555555,
+          "idealism": 5.3,
+          "relativism": 4.2,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Absolutist",
+          "numeric": 56
+        },
+        {
+          "run": 5,
+          "foundations": {
+            "Care": 4,
+            "Equality": 1.5,
+            "Proportionality": 3.3333333333333335,
+            "Loyalty": 1.8333333333333333,
+            "Authority": 2.6666666666666665,
+            "Purity": 2.1666666666666665
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 6,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.5233333333333332,
+          "idealism": 5.5,
+          "relativism": 4.3,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Absolutist",
+          "numeric": 56
+        }
+      ],
+      "rank": 8
+    },
+    {
+      "name": "Kimi K3",
+      "provider": "Moonshot AI",
+      "color": "#0284c7",
+      "agreement": 70.14925373134328,
+      "matched_pairs": 376,
+      "compared_pairs": 536,
+      "possible_pairs": 560,
+      "all_five_observed_items": 50,
+      "all_five_identical_items": 23,
+      "all_five_identical_percent": 46.0,
+      "numeric": 274,
+      "scheduled": 280,
+      "missing": 6,
+      "distance": 0.49333333333333335,
+      "distance_min": 0.37333333333333346,
+      "distance_max": 0.5511111111111111,
+      "distance_sd": 0.06989851550022928,
+      "foundations": [
+        4.533333333333333,
+        2.1466666666666665,
+        3.9333333333333336,
+        3.3666666666666667,
+        2.9,
+        3.033333333333333
+      ],
+      "idealism": 5.3,
+      "relativism": 4.56,
+      "ideology": "Absolutist",
+      "categories_by_run": [
+        "Absolutist",
+        "Absolutist",
+        "Absolutist",
+        "Absolutist",
+        "Absolutist"
+      ],
+      "category_counts": {
+        "Absolutist": 5
+      },
+      "category_changed": false,
+      "runs": [
+        {
+          "run": 1,
+          "foundations": {
+            "Care": 4.5,
+            "Equality": 2.1666666666666665,
+            "Proportionality": 3.8333333333333335,
+            "Loyalty": 3.3333333333333335,
+            "Authority": 2.8333333333333335,
+            "Purity": 3.1666666666666665
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 6,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.4955555555555556,
+          "idealism": 5,
+          "relativism": 4.4,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Absolutist",
+          "numeric": 56
+        },
+        {
+          "run": 2,
+          "foundations": {
+            "Care": 4.5,
+            "Equality": 2,
+            "Proportionality": 4,
+            "Loyalty": 3.3333333333333335,
+            "Authority": 3,
+            "Purity": 3.1666666666666665
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 6,
+            "Proportionality": 5,
+            "Loyalty": 6,
+            "Authority": 5,
+            "Purity": 6
+          },
+          "distance": 0.5233333333333333,
+          "idealism": 5.8,
+          "relativism": 4.7,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Absolutist",
+          "numeric": 54
+        },
+        {
+          "run": 3,
+          "foundations": {
+            "Care": 4.666666666666667,
+            "Equality": 2.4,
+            "Proportionality": 3.8333333333333335,
+            "Loyalty": 3.3333333333333335,
+            "Authority": 3,
+            "Purity": 2.6666666666666665
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 5,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 5,
+            "Purity": 6
+          },
+          "distance": 0.37333333333333346,
+          "idealism": 5.2,
+          "relativism": 4.6,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Absolutist",
+          "numeric": 54
+        },
+        {
+          "run": 4,
+          "foundations": {
+            "Care": 4.5,
+            "Equality": 2.1666666666666665,
+            "Proportionality": 4,
+            "Loyalty": 3.5,
+            "Authority": 2.8333333333333335,
+            "Purity": 3.1666666666666665
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 6,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.5511111111111111,
+          "idealism": 5.3,
+          "relativism": 4.5,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Absolutist",
+          "numeric": 56
+        },
+        {
+          "run": 5,
+          "foundations": {
+            "Care": 4.5,
+            "Equality": 2,
+            "Proportionality": 4,
+            "Loyalty": 3.3333333333333335,
+            "Authority": 2.8333333333333335,
+            "Purity": 3
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 5,
+            "Proportionality": 5,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.5233333333333333,
+          "idealism": 5.2,
+          "relativism": 4.6,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Absolutist",
+          "numeric": 54
+        }
+      ],
+      "rank": 9
+    },
+    {
+      "name": "Llama 4 Maverick",
+      "provider": "Meta",
+      "color": "#ea580c",
+      "agreement": 93.92857142857143,
+      "matched_pairs": 526,
+      "compared_pairs": 560,
+      "possible_pairs": 560,
+      "all_five_observed_items": 56,
+      "all_five_identical_items": 49,
+      "all_five_identical_percent": 87.5,
+      "numeric": 280,
+      "scheduled": 280,
+      "missing": 0,
+      "distance": 0.5055555555555554,
+      "distance_min": 0.47222222222222215,
+      "distance_max": 0.5277777777777777,
+      "distance_sd": 0.0232405562926132,
+      "foundations": [
+        3.0,
+        2.3333333333333335,
+        3.1999999999999997,
+        3.0666666666666664,
+        2.8333333333333335,
+        2.8333333333333335
+      ],
+      "idealism": 5.3,
+      "relativism": 5,
+      "ideology": "Situationist",
+      "categories_by_run": [
+        "Situationist",
+        "Situationist",
+        "Situationist",
+        "Situationist",
+        "Situationist"
+      ],
+      "category_counts": {
+        "Situationist": 5
+      },
+      "category_changed": false,
+      "runs": [
+        {
+          "run": 1,
+          "foundations": {
+            "Care": 2.8333333333333335,
+            "Equality": 2.3333333333333335,
+            "Proportionality": 3.3333333333333335,
+            "Loyalty": 3,
+            "Authority": 2.8333333333333335,
+            "Purity": 2.8333333333333335
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 6,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.49999999999999983,
+          "idealism": 5.2,
+          "relativism": 5,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Situationist",
+          "numeric": 56
+        },
+        {
+          "run": 2,
+          "foundations": {
+            "Care": 3.1666666666666665,
+            "Equality": 2.3333333333333335,
+            "Proportionality": 3.1666666666666665,
+            "Loyalty": 3,
+            "Authority": 2.8333333333333335,
+            "Purity": 2.8333333333333335
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 6,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.47222222222222215,
+          "idealism": 5.2,
+          "relativism": 5,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Situationist",
+          "numeric": 56
+        },
+        {
+          "run": 3,
+          "foundations": {
+            "Care": 3.1666666666666665,
+            "Equality": 2.3333333333333335,
+            "Proportionality": 3.1666666666666665,
+            "Loyalty": 3.1666666666666665,
+            "Authority": 2.8333333333333335,
+            "Purity": 2.8333333333333335
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 6,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.49999999999999994,
+          "idealism": 5.2,
+          "relativism": 5,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Situationist",
+          "numeric": 56
+        },
+        {
+          "run": 4,
+          "foundations": {
+            "Care": 3,
+            "Equality": 2.3333333333333335,
+            "Proportionality": 3.1666666666666665,
+            "Loyalty": 3.1666666666666665,
+            "Authority": 2.8333333333333335,
+            "Purity": 2.8333333333333335
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 6,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.5277777777777777,
+          "idealism": 5.2,
+          "relativism": 5,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Situationist",
+          "numeric": 56
+        },
+        {
+          "run": 5,
+          "foundations": {
+            "Care": 2.8333333333333335,
+            "Equality": 2.3333333333333335,
+            "Proportionality": 3.1666666666666665,
+            "Loyalty": 3,
+            "Authority": 2.8333333333333335,
+            "Purity": 2.8333333333333335
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 6,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.5277777777777777,
+          "idealism": 5.7,
+          "relativism": 5,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Situationist",
+          "numeric": 56
+        }
+      ],
+      "rank": 10
+    },
+    {
+      "name": "GLM 5.3",
+      "provider": "Zhipu AI",
+      "color": "#15803d",
+      "agreement": 68.75,
+      "matched_pairs": 385,
+      "compared_pairs": 560,
+      "possible_pairs": 560,
+      "all_five_observed_items": 56,
+      "all_five_identical_items": 21,
+      "all_five_identical_percent": 37.5,
+      "numeric": 280,
+      "scheduled": 280,
+      "missing": 0,
+      "distance": 0.5075555555555555,
+      "distance_min": 0.46,
+      "distance_max": 0.5711111111111111,
+      "distance_sd": 0.05382527746168299,
+      "foundations": [
+        4.633333333333334,
+        2.1666666666666665,
+        3.7666666666666666,
+        2.466666666666667,
+        2.5,
+        2.966666666666667
+      ],
+      "idealism": 4.74,
+      "relativism": 4.58,
+      "ideology": "Exceptionist",
+      "categories_by_run": [
+        "Exceptionist",
+        "Exceptionist",
+        "Exceptionist",
+        "Exceptionist",
+        "Exceptionist"
+      ],
+      "category_counts": {
+        "Exceptionist": 5
+      },
+      "category_changed": false,
+      "runs": [
+        {
+          "run": 1,
+          "foundations": {
+            "Care": 4.833333333333333,
+            "Equality": 2.1666666666666665,
+            "Proportionality": 3.6666666666666665,
+            "Loyalty": 2.5,
+            "Authority": 2.6666666666666665,
+            "Purity": 2.8333333333333335
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 6,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.46,
+          "idealism": 4.7,
+          "relativism": 4.6,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Exceptionist",
+          "numeric": 56
+        },
+        {
+          "run": 2,
+          "foundations": {
+            "Care": 4.5,
+            "Equality": 2.3333333333333335,
+            "Proportionality": 4,
+            "Loyalty": 2.6666666666666665,
+            "Authority": 2.5,
+            "Purity": 3
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 6,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.46,
+          "idealism": 4.9,
+          "relativism": 4.2,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Exceptionist",
+          "numeric": 56
+        },
+        {
+          "run": 3,
+          "foundations": {
+            "Care": 4.666666666666667,
+            "Equality": 2.1666666666666665,
+            "Proportionality": 3.6666666666666665,
+            "Loyalty": 2.5,
+            "Authority": 2.5,
+            "Purity": 3
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 6,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.48777777777777787,
+          "idealism": 4.9,
+          "relativism": 4.5,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Exceptionist",
+          "numeric": 56
+        },
+        {
+          "run": 4,
+          "foundations": {
+            "Care": 4.666666666666667,
+            "Equality": 2,
+            "Proportionality": 3.5,
+            "Loyalty": 2.3333333333333335,
+            "Authority": 2.3333333333333335,
+            "Purity": 2.8333333333333335
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 6,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.5588888888888889,
+          "idealism": 4.4,
+          "relativism": 4.8,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Exceptionist",
+          "numeric": 56
+        },
+        {
+          "run": 5,
+          "foundations": {
+            "Care": 4.5,
+            "Equality": 2.1666666666666665,
+            "Proportionality": 4,
+            "Loyalty": 2.3333333333333335,
+            "Authority": 2.5,
+            "Purity": 3.1666666666666665
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 6,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.5711111111111111,
+          "idealism": 4.8,
+          "relativism": 4.8,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Exceptionist",
+          "numeric": 56
+        }
+      ],
+      "rank": 11
+    },
+    {
+      "name": "MiniMax M3",
+      "provider": "MiniMax",
+      "color": "#475569",
+      "agreement": 66.96428571428571,
+      "matched_pairs": 375,
+      "compared_pairs": 560,
+      "possible_pairs": 560,
+      "all_five_observed_items": 56,
+      "all_five_identical_items": 23,
+      "all_five_identical_percent": 41.07142857142857,
+      "numeric": 280,
+      "scheduled": 280,
+      "missing": 0,
+      "distance": 0.5891111111111113,
+      "distance_min": 0.567777777777778,
+      "distance_max": 0.6511111111111113,
+      "distance_sd": 0.034822300219724045,
+      "foundations": [
+        4.533333333333333,
+        2.1,
+        3.9,
+        2.9,
+        3.5666666666666664,
+        3.5
+      ],
+      "idealism": 5.6000000000000005,
+      "relativism": 4.58,
+      "ideology": "Absolutist",
+      "categories_by_run": [
+        "Absolutist",
+        "Absolutist",
+        "Absolutist",
+        "Absolutist",
+        "Absolutist"
+      ],
+      "category_counts": {
+        "Absolutist": 5
+      },
+      "category_changed": false,
+      "runs": [
+        {
+          "run": 1,
+          "foundations": {
+            "Care": 4.666666666666667,
+            "Equality": 2.1666666666666665,
+            "Proportionality": 3.8333333333333335,
+            "Loyalty": 2.6666666666666665,
+            "Authority": 3.5,
+            "Purity": 3.5
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 6,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.567777777777778,
+          "idealism": 5.5,
+          "relativism": 4.7,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Absolutist",
+          "numeric": 56
+        },
+        {
+          "run": 2,
+          "foundations": {
+            "Care": 4.5,
+            "Equality": 1.8333333333333333,
+            "Proportionality": 3.8333333333333335,
+            "Loyalty": 2.8333333333333335,
+            "Authority": 3.6666666666666665,
+            "Purity": 3.3333333333333335
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 6,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.5755555555555557,
+          "idealism": 5.8,
+          "relativism": 4.9,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Absolutist",
+          "numeric": 56
+        },
+        {
+          "run": 3,
+          "foundations": {
+            "Care": 4.333333333333333,
+            "Equality": 2,
+            "Proportionality": 3.8333333333333335,
+            "Loyalty": 3,
+            "Authority": 3.6666666666666665,
+            "Purity": 3.5
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 6,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.5755555555555556,
+          "idealism": 5.9,
+          "relativism": 4.9,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Absolutist",
+          "numeric": 56
+        },
+        {
+          "run": 4,
+          "foundations": {
+            "Care": 4.666666666666667,
+            "Equality": 2.1666666666666665,
+            "Proportionality": 4,
+            "Loyalty": 2.6666666666666665,
+            "Authority": 3.5,
+            "Purity": 3.8333333333333335
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 6,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.6511111111111113,
+          "idealism": 5.4,
+          "relativism": 4.2,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Absolutist",
+          "numeric": 56
+        },
+        {
+          "run": 5,
+          "foundations": {
+            "Care": 4.5,
+            "Equality": 2.3333333333333335,
+            "Proportionality": 4,
+            "Loyalty": 3.3333333333333335,
+            "Authority": 3.5,
+            "Purity": 3.3333333333333335
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 6,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.5755555555555557,
+          "idealism": 5.4,
+          "relativism": 4.2,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Absolutist",
+          "numeric": 56
+        }
+      ],
+      "rank": 12
+    },
+    {
+      "name": "Mistral Large 2512",
+      "provider": "Mistral AI",
+      "color": "#854d0e",
+      "agreement": 94.74885844748859,
+      "matched_pairs": 415,
+      "compared_pairs": 438,
+      "possible_pairs": 560,
+      "all_five_observed_items": 27,
+      "all_five_identical_items": 23,
+      "all_five_identical_percent": 85.18518518518519,
+      "numeric": 249,
+      "scheduled": 280,
+      "missing": 31,
+      "distance": 0.6444444444444445,
+      "distance_min": 0.598888888888889,
+      "distance_max": 0.7016666666666668,
+      "distance_sd": 0.04845610206321277,
+      "foundations": [
+        4.696666666666666,
+        3,
+        4.266666666666667,
+        3.48,
+        3.513333333333333,
+        3.55
+      ],
+      "idealism": 7.05,
+      "relativism": 5.748333333333334,
+      "ideology": "Situationist",
+      "categories_by_run": [
+        "Situationist",
+        "Situationist",
+        "Situationist",
+        "Situationist",
+        "Situationist"
+      ],
+      "category_counts": {
+        "Situationist": 5
+      },
+      "category_changed": false,
+      "runs": [
+        {
+          "run": 1,
+          "foundations": {
+            "Care": 4.75,
+            "Equality": 3,
+            "Proportionality": 4,
+            "Loyalty": 3.6,
+            "Authority": 4,
+            "Purity": 3.5
+          },
+          "foundation_counts": {
+            "Care": 4,
+            "Equality": 4,
+            "Proportionality": 4,
+            "Loyalty": 5,
+            "Authority": 5,
+            "Purity": 4
+          },
+          "distance": 0.7016666666666668,
+          "idealism": 7,
+          "relativism": 5.166666666666667,
+          "epq_counts": [
+            5,
+            6
+          ],
+          "category": "Situationist",
+          "numeric": 37
+        },
+        {
+          "run": 2,
+          "foundations": {
+            "Care": 4.666666666666667,
+            "Equality": 3,
+            "Proportionality": 4.333333333333333,
+            "Loyalty": 3.4,
+            "Authority": 3.3333333333333335,
+            "Purity": 3.5
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 6,
+            "Proportionality": 6,
+            "Loyalty": 5,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.598888888888889,
+          "idealism": 7,
+          "relativism": 5.9,
+          "epq_counts": [
+            10,
+            10
+          ],
+          "category": "Situationist",
+          "numeric": 55
+        },
+        {
+          "run": 3,
+          "foundations": {
+            "Care": 4.6,
+            "Equality": 3,
+            "Proportionality": 4.333333333333333,
+            "Loyalty": 3.5,
+            "Authority": 3.3333333333333335,
+            "Purity": 3.5
+          },
+          "foundation_counts": {
+            "Care": 5,
+            "Equality": 6,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.6044444444444445,
+          "idealism": 7,
+          "relativism": 5.9,
+          "epq_counts": [
+            9,
+            10
+          ],
+          "category": "Situationist",
+          "numeric": 54
+        },
+        {
+          "run": 4,
+          "foundations": {
+            "Care": 4.666666666666667,
+            "Equality": 3,
+            "Proportionality": 4.333333333333333,
+            "Loyalty": 3.4,
+            "Authority": 3.5,
+            "Purity": 3.5
+          },
+          "foundation_counts": {
+            "Care": 6,
+            "Equality": 6,
+            "Proportionality": 6,
+            "Loyalty": 5,
+            "Authority": 6,
+            "Purity": 6
+          },
+          "distance": 0.6266666666666668,
+          "idealism": 7.25,
+          "relativism": 5.9,
+          "epq_counts": [
+            8,
+            10
+          ],
+          "category": "Situationist",
+          "numeric": 53
+        },
+        {
+          "run": 5,
+          "foundations": {
+            "Care": 4.8,
+            "Equality": 3,
+            "Proportionality": 4.333333333333333,
+            "Loyalty": 3.5,
+            "Authority": 3.4,
+            "Purity": 3.75
+          },
+          "foundation_counts": {
+            "Care": 5,
+            "Equality": 6,
+            "Proportionality": 6,
+            "Loyalty": 6,
+            "Authority": 5,
+            "Purity": 4
+          },
+          "distance": 0.6905555555555556,
+          "idealism": 7,
+          "relativism": 5.875,
+          "epq_counts": [
+            10,
+            8
+          ],
+          "category": "Situationist",
+          "numeric": 50
+        }
+      ],
+      "rank": 13
+    }
+  ],
+  "jev": {
+    "name": "Jev (TypeSafe)",
+    "provider": "TypeSafe",
+    "color": "#0f766e",
+    "agreement": 95.71428571428571,
+    "matched_pairs": 536,
+    "compared_pairs": 560,
+    "possible_pairs": 560,
+    "all_five_observed_items": 56,
+    "all_five_identical_items": 51,
+    "all_five_identical_percent": 91.07142857142857,
+    "numeric": 280,
+    "scheduled": 280,
+    "missing": 0,
+    "distance": 0.20555555555555546,
+    "distance_min": 0.19444444444444434,
+    "distance_max": 0.22222222222222218,
+    "distance_sd": 0.01521451548625465,
+    "foundations": [
+      4,
+      2.8333333333333335,
+      3.5,
+      2.8333333333333335,
+      3,
+      3.2333333333333334
+    ],
+    "idealism": 5.52,
+    "relativism": 5.2,
+    "ideology": "Situationist",
+    "categories_by_run": [
+      "Situationist",
+      "Situationist",
+      "Situationist",
+      "Situationist",
+      "Situationist"
+    ],
+    "category_counts": {
+      "Situationist": 5
+    },
+    "category_changed": false,
+    "runs": [
+      {
+        "run": 1,
+        "foundations": {
+          "Care": 4,
+          "Equality": 2.8333333333333335,
+          "Proportionality": 3.5,
+          "Loyalty": 2.8333333333333335,
+          "Authority": 3,
+          "Purity": 3.1666666666666665
+        },
+        "foundation_counts": {
+          "Care": 6,
+          "Equality": 6,
+          "Proportionality": 6,
+          "Loyalty": 6,
+          "Authority": 6,
+          "Purity": 6
+        },
+        "distance": 0.19444444444444434,
+        "idealism": 5.6,
+        "relativism": 5.2,
+        "epq_counts": [
+          10,
+          10
+        ],
+        "category": "Situationist",
+        "numeric": 56
+      },
+      {
+        "run": 2,
+        "foundations": {
+          "Care": 4,
+          "Equality": 2.8333333333333335,
+          "Proportionality": 3.5,
+          "Loyalty": 2.8333333333333335,
+          "Authority": 3,
+          "Purity": 3.3333333333333335
+        },
+        "foundation_counts": {
+          "Care": 6,
+          "Equality": 6,
+          "Proportionality": 6,
+          "Loyalty": 6,
+          "Authority": 6,
+          "Purity": 6
+        },
+        "distance": 0.22222222222222218,
+        "idealism": 5.6,
+        "relativism": 5.3,
+        "epq_counts": [
+          10,
+          10
+        ],
+        "category": "Situationist",
+        "numeric": 56
+      },
+      {
+        "run": 3,
+        "foundations": {
+          "Care": 4,
+          "Equality": 2.8333333333333335,
+          "Proportionality": 3.5,
+          "Loyalty": 2.8333333333333335,
+          "Authority": 3,
+          "Purity": 3.1666666666666665
+        },
+        "foundation_counts": {
+          "Care": 6,
+          "Equality": 6,
+          "Proportionality": 6,
+          "Loyalty": 6,
+          "Authority": 6,
+          "Purity": 6
+        },
+        "distance": 0.19444444444444434,
+        "idealism": 5.5,
+        "relativism": 5.1,
+        "epq_counts": [
+          10,
+          10
+        ],
+        "category": "Situationist",
+        "numeric": 56
+      },
+      {
+        "run": 4,
+        "foundations": {
+          "Care": 4,
+          "Equality": 2.8333333333333335,
+          "Proportionality": 3.5,
+          "Loyalty": 2.8333333333333335,
+          "Authority": 3,
+          "Purity": 3.3333333333333335
+        },
+        "foundation_counts": {
+          "Care": 6,
+          "Equality": 6,
+          "Proportionality": 6,
+          "Loyalty": 6,
+          "Authority": 6,
+          "Purity": 6
+        },
+        "distance": 0.22222222222222218,
+        "idealism": 5.5,
+        "relativism": 5.2,
+        "epq_counts": [
+          10,
+          10
+        ],
+        "category": "Situationist",
+        "numeric": 56
+      },
+      {
+        "run": 5,
+        "foundations": {
+          "Care": 4,
+          "Equality": 2.8333333333333335,
+          "Proportionality": 3.5,
+          "Loyalty": 2.8333333333333335,
+          "Authority": 3,
+          "Purity": 3.1666666666666665
+        },
+        "foundation_counts": {
+          "Care": 6,
+          "Equality": 6,
+          "Proportionality": 6,
+          "Loyalty": 6,
+          "Authority": 6,
+          "Purity": 6
+        },
+        "distance": 0.19444444444444434,
+        "idealism": 5.4,
+        "relativism": 5.2,
+        "epq_counts": [
+          10,
+          10
+        ],
+        "category": "Situationist",
+        "numeric": 56
+      }
+    ]
+  },
+  "llm_numeric": 3580,
+  "llm_scheduled": 3640
+}
