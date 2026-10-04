@@ -26,6 +26,12 @@ The leaderboard reports average distance from US human reference means, exact an
 
 Jev: 95.7% agreement, 280/280 ratings, mean distance 0.206. Its batched ethical-alignment task differs from the LLM self-description prompt, so it remains outside the leaderboard. Repeatability and closeness to the human reference do not measure moral correctness.
 
+## Analytics
+
+The live website uses the MoralityBench Google Analytics 4 property and the `MoralityBench website` web stream. Its public measurement ID is `G-TWHN1QS4PY`. The Google tag appears once in `index.html`; no API key or account credentials are needed by the site. Enhanced measurement covers page views, scrolls, outbound clicks, and file downloads. Search, form, and video measurements are disabled. Reporting uses Chicago time and US dollars.
+
+After changing the tag, verify the published site with the stream's **Test installation** control and check **Realtime** in Analytics for incoming visits. Creating the property alone does not install tracking; the deployed HTML must contain the tag.
+
 ## Update and verify
 
 The static page and SVG charts share values from `data/five-run-summary.json`, copied from the public data release. After recomputing the study and copying the verified summary, run:

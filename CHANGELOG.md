@@ -2,6 +2,7 @@
 
 ## 2026-10-04
 
+- Connected the website to its own Google Analytics 4 property for visits, scrolls, outbound links, and downloads.
 - Added sortable agreement across five runs and visible missing-answer counts.
 - Changed leaderboard, foundation charts, EPQ coordinates, and Jev summary to five-run averages.
 - Added observed distance ranges, EPQ category-change flags, exact agreement counts, and a plain-language explanation.
