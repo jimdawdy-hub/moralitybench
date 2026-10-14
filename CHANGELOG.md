@@ -2,6 +2,7 @@
 
 ## 2026-10-14
 
+- Revised website and response-viewer prose with the requested Humanizer skill; kept scores, quoted answers, links and chart behavior unchanged.
 - Published three new five-run configurations with strict whole-answer integer scoring, keeping historical scores intact.
 - Updated 16-model ranks, summaries, charts and dated source links; disclosed different parser policies and collection intervals.
 - Added Gemini's full response viewer and instruction-following addendum links; 47 prose-derived numbers are excluded.

@@ -48,7 +48,7 @@ def render_leaderboard():
     return f'''<section id="leaderboard">
   <div class="section-header">
     <h2>Leaderboard</h2>
-    <p>{len(MODELS)} scored LLM configurations, each tested five times. Ranked by average distance from US human reference scores. Lower distance means a closer profile; it does not mean a better moral judgment.</p>
+    <p>We tested {len(MODELS)} LLM configurations five times each. The ranking shows how close their average scores are to the US human reference. It cannot tell us which model makes better moral judgments.</p>
   </div>
   <div class="card-grid">
     <div class="card metric-card"><div class="metric-label">Closest on average</div><div class="metric-value" style="font-size:1.25rem">{esc(leader['name'])}</div><div class="metric-sub">Average distance: {show(leader['distance'])}</div></div>
@@ -57,9 +57,9 @@ def render_leaderboard():
     <div class="card metric-card"><div class="metric-label">Usable answers across five runs</div><div class="metric-value">{DATA['llm_numeric']:,} / {DATA['llm_scheduled']:,}</div><div class="metric-sub">Missing answers remain visible below</div></div>
   </div>
   <div class="results-guide" id="agreement-explainer">
-    <p><strong>Agreement across 5 runs:</strong> We compare answers to the same question across every pair of runs. An 80% result means the answers matched in 8 out of 10 comparisons. Higher agreement means more repeatable answers, not more ethical answers.</p>
-    <p><strong>Reading the scores:</strong> Distance, foundation scores, and EPQ scores are averages across five runs. The small numbers under distance show its lowest and highest values. Missing answers are excluded from both scoring and agreement; read the missing count alongside each percentage.</p>
-    <p class="chart-note">The original 13-model cohort was collected by October 4. GPT-6 Astra, Muse Wonder, and Gemini 4 Argon received five fresh administrations on October 14. Older models were not rerun. October 14 results use strict whole-answer integer parsing; older results retain their historical first-digit rule. Older agreement includes cross-time pairs, while the new trials ran concurrently in one session, so these are descriptive comparisons. Models may have been served by different providers or backend versions. <a href="{STUDY}">October 14 data and calculation details</a> · <a href="{ORIGINAL_STUDY}">Original five-run study</a> · <a href="{PAPER}">Read the working paper</a></p>
+    <p>Agreement measures how often a model gives the same answer. We compare each question across all ten pairs of runs; 80% means the answers matched in 8 out of 10 available comparisons. This percentage leaves moral quality unassessed.</p>
+    <p>Scores and distances are averages of five runs. The range under each distance shows its lowest and highest values. We leave missing answers out of the calculations, so check the missing count as well as the agreement percentage.</p>
+    <p class="chart-note">The first 13 models were tested by October 4. On October 14 we ran five new trials of GPT-6 Astra, Muse Wonder, and Gemini 4 Argon. We did not retest the earlier models. The new results accept only a complete integer answer; earlier results retain their original first-digit rule. The earlier trials span different times, while the new trials ran concurrently in one session. Providers and model versions may also differ. These differences limit comparisons between the two groups. <a href="{STUDY}">October 14 data and calculation details</a> · <a href="{ORIGINAL_STUDY}">Original five-run study</a> · <a href="{PAPER}">Read the working paper</a></p>
   </div>
   <div class="table-wrap" tabindex="0" role="region" aria-label="Five-run LLM leaderboard; scroll horizontally to see all scores">
     <table id="leaderboard-table" aria-describedby="agreement-explainer">
@@ -68,10 +68,10 @@ def render_leaderboard():
       <tbody>{''.join(rows)}</tbody>
     </table>
   </div>
-  <p class="chart-note" style="margin-top:1rem">*EPQ groups use the average scores. “Varied by run” means the model crossed a group boundary at least once. Missing covers unavailable or unusable answers, including API errors; it does not necessarily mean a refusal.</p>
+  <p class="chart-note" style="margin-top:1rem">*EPQ groups come from the average scores. “Varied by run” marks a model that changed groups at least once. Missing answers include responses we could not score and API errors, as well as refusals.</p>
   <div class="norms-bar"><span class="norms-dot"></span>US human reference: Care 4.05 · Equality 2.88 · Proportionality 3.63 · Loyalty 2.81 · Authority 3.01 · Purity 2.26</div>
   <details class="repeat-details"><summary>See exact agreement counts and group changes</summary>
-    <p>Each question can contribute 10 comparisons across five runs, for up to 560 comparisons per model. We omit any comparison with a missing answer. “Same in all 5” is a stricter check: how many questions received the identical answer in every run, among questions answered in all five. A question with four identical answers and one different answer has 60% pairwise agreement, but does not count as identical in all five.</p>
+    <p>Five runs give ten pairs per question, or 560 comparisons for a fully answered questionnaire. We leave out pairs with a missing answer. “Same in all 5” counts only questions answered identically in every run, among questions answered in all five. Four matching answers and one different answer give 60% pairwise agreement, but fail this stricter check.</p>
     <div class="table-wrap" tabindex="0"><table><thead><tr><th scope="col">Model</th><th scope="col">Matching / available comparisons</th><th scope="col">Same in all 5 / complete questions</th><th scope="col">EPQ groups by run</th></tr></thead><tbody>{same_rows}</tbody></table></div>
   </details>
 </section>'''
@@ -81,9 +81,9 @@ def render_jev():
     m = JEV
     foundation = ''.join(f'<span>{name} <strong>{show(v)}</strong></span>' for name, v in zip(DATA['foundations'], m['foundations']))
     return f'''<section id="jev-comparison" aria-labelledby="jev-heading">
-  <div class="section-header"><h2 id="jev-heading">Jev: A Non-LLM Comparison</h2><p>A structured decision model, evaluated separately from the {len(MODELS)} scored generative LLM configurations. Five runs are complete.</p></div>
+  <div class="section-header"><h2 id="jev-heading">Jev: a separate comparison</h2><p>Jev completed five runs using a different prompt and interface from the {len(MODELS)} LLM configurations.</p></div>
   <div class="card">
-    <div class="jev-copy"><p>TypeSafe describes Jev as a System One model. It returns structured scores, probabilities, and confidence values instead of generating a text answer. We tested the same 56 items five times using its separate questionnaire protocol.</p></div>
+    <div class="jev-copy"><p>TypeSafe calls Jev a System One model. It returns scores with probabilities and confidence values through a structured interface. We gave it the same 56 items five times, using its own questionnaire protocol.</p></div>
     <dl class="jev-summary">
       <div><dt>Agreement across 5 runs</dt><dd>{m['agreement']:.1f}%</dd></div>
       <div><dt>Average distance from US norms</dt><dd>{show(m['distance'])}</dd></div>
@@ -93,9 +93,9 @@ def render_jev():
     <div class="jev-foundations" aria-label="Jev average foundation scores on a scale of 1 to 5">{foundation}</div>
     <div class="jev-copy">
       <p>Average EPQ scores: Idealism {show(m['idealism'])} / 9; Relativism {show(m['relativism'])} / 9. Distance ranged from {show(m['distance_min'])} to {show(m['distance_max'])} across the five runs.</p>
-      <p><strong>What repeated.</strong> {m['matched_pairs']} of {m['compared_pairs']} answer comparisons matched, and {m['all_five_identical_items']} of 56 questions received the same rounded answer in all five runs. Its underlying continuous scores still varied. The agreement percentage describes the rounded questionnaire ratings.</p>
-      <p><strong>Why it matters.</strong> A system that returns structured decisions can produce a repeatable questionnaire profile close to these human reference scores. That does not establish human-like beliefs or moral reasoning. Jev’s average Purity score is {show(m['foundations'][5])}, compared with the human reference of 2.26.</p>
-      <p><strong>How to interpret it.</strong> Jev evaluated statements’ alignment with ethical principles in batches. The LLMs answered each question as an immediate self-description. Different prompts, interfaces, and score conversion prevent a controlled comparison of architectures, so Jev stays outside the LLM ranking and charts.</p>
+      <p>Jev matched in {m['matched_pairs']} of {m['compared_pairs']} answer comparisons. It gave the same rounded answer in all five runs on {m['all_five_identical_items']} of 56 questions. Its scores before rounding still varied; the agreement percentage uses the rounded ratings.</p>
+      <p>Jev’s repeatable scores are close to the human reference, though the questionnaire cannot establish human-like beliefs or moral reasoning. Its average Purity score is {show(m['foundations'][5])}, against the human reference of 2.26.</p>
+      <p>Jev rated how well batches of statements fit ethical principles. The LLMs answered one question at a time as an immediate self-description. The prompts, interfaces, and score conversions differ, so these results cannot show whether model design explains the difference. We report Jev separately from the LLM ranking and charts.</p>
     </div>
     <p class="jev-sources"><a href="{ORIGINAL_STUDY}">Five-run source records and analysis</a> · <a href="https://typesafe.ai/blog/introducing-system-one-models-and-jev">About Jev</a></p>
   </div>
@@ -111,15 +111,15 @@ def render_findings():
     availability=addition.get('unscored_models',[])
     strict={m['name']:m for m in addition.get('strict_models',[])}
     gemini=strict.get('Gemini 4 Argon')
-    sensitivity=(f"""<p><strong>Gemini Argon: partial questionnaire.</strong> The leaderboard uses only {gemini['numeric']}/280 whole-answer integers; 125 responses are missing. The historical first-digit parser would also count 47 verbose responses about other frameworks, producing an erroneous mean Absolutist label. Those prose-derived digits are excluded here; the strict result is {esc(gemini['ideology'])} in all five runs. Equality and Authority are sparsely answered, so the score does not represent a complete questionnaire. <a href=\"{STUDY}/five-run-summary.json\">Inspect both parser calculations and item counts</a>. <a href="gemini-answers.html">Read Gemini’s original answers</a> · <a href="https://github.com/FreecaseAI/moralitybench-data/blob/master/repeated-runs/2026-10-14/gemini-instruction-addendum.md">Instruction-following addendum</a>.</p>""" if gemini else '')
+    sensitivity=(f"""<p><strong>Gemini often ignored the answer instructions.</strong> It gave {gemini['numeric']} complete integer answers out of 280. We excluded 125 responses, including 47 that described other frameworks’ ratings. Counting digits from those explanations would wrongly label its average profile Absolutist. The strict result is {esc(gemini['ideology'])} in all five runs. It answered few Equality and Authority items, so the profile covers only part of the questionnaire. <a href=\"{STUDY}/five-run-summary.json\">Inspect both parser calculations and item counts</a>. <a href="gemini-answers.html">Read Gemini’s original answers</a> · <a href="https://github.com/FreecaseAI/moralitybench-data/blob/master/repeated-runs/2026-10-14/gemini-instruction-addendum.md">Instruction-following addendum</a>.</p>""" if gemini else '')
     note=''.join(f"<p><strong>{esc(m['name'])} is not ranked:</strong> {esc(m['reason'])}. Its raw responses and missing-answer counts are preserved in the October 14 release.</p>" for m in availability)
     return f'''<section id="findings">
-  <div class="section-header"><h2>Key Findings</h2><p>Five-run profiles from two dated collections; older configurations were not retested.</p></div>
+  <div class="section-header"><h2>Findings</h2><p>We collected these results in two groups and did not retest the earlier models.</p></div>
   <div class="findings-grid">
-    <div class="finding"><h4>Closest observed average profile</h4><p>{esc(leader['name'])} has the lowest displayed mean distance ({leader['distance']:.3f}). This describes closeness to the selected human reference, not moral correctness.</p></div>
-    <div class="finding"><h4>Repeatability differs</h4><p>Scored model agreement ranges from {min(m['agreement'] for m in MODELS):.1f}% to {max(m['agreement'] for m in MODELS):.1f}%. Among configurations with complete data, {esc(complete['name'])} has the highest agreement ({complete['agreement']:.1f}%). Missing answers are excluded; read the published denominators.</p></div>
-    <div class="finding"><h4>{len(changed)} configurations changed EPQ group</h4><p>{esc(', '.join(changed))}. The charts show averages, which can hide category changes between runs.</p></div>
-    <div class="finding"><h4>Adaptation and missingness matter</h4><p>Profiles below the Purity reference: {esc(', '.join(below)) or 'none'}. Four of six Purity items were replaced. October 14 models use five fresh runs; prior rows retain their original collection. Nonanswers remain missing and do not imply neutral beliefs.</p></div>
+    <div class="finding"><h4>Closest average scores</h4><p>{esc(leader['name'])} has the lowest average distance ({leader['distance']:.3f}) from the selected human reference. The distance measures score similarity and cannot establish moral correctness.</p></div>
+    <div class="finding"><h4>Repeatability differs</h4><p>Agreement ranges from {min(m['agreement'] for m in MODELS):.1f}% to {max(m['agreement'] for m in MODELS):.1f}%. Of the models that answered every item, {esc(complete['name'])} has the highest agreement ({complete['agreement']:.1f}%). A model with missing answers has fewer comparisons, so read the denominator too.</p></div>
+    <div class="finding"><h4>{len(changed)} configurations changed EPQ group</h4><p>{esc(', '.join(changed))} changed groups between runs. Their average scores hide some of that movement.</p></div>
+    <div class="finding"><h4>The Purity comparison has limits</h4><p>Models below the Purity reference: {esc(', '.join(below)) or 'none'}. We replaced four of the six Purity questions, so this is an exploratory comparison. The October 14 models have five new runs; earlier rows keep their original results. We leave unanswered items missing, without treating them as neutral.</p></div>
   </div>
   {sensitivity}
   {note}
