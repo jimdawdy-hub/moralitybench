@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-10-14
+
+- Published three new five-run configurations with strict whole-answer integer scoring, keeping historical scores intact.
+- Updated 16-model ranks, summaries, charts and dated source links; disclosed different parser policies and collection intervals.
+- Added Gemini's full response viewer and instruction-following addendum links; 47 prose-derived numbers are excluded.
+- Fixed scatter label placement for more than 13 models so sorting handlers and all charts remain functional.
+- Verified both sorting directions, 16 chart options and narrow-screen table scrolling; preserved analytics.
+
 ## 2026-10-04
 
 - Connected the website to its own Google Analytics 4 property for visits, scrolls, outbound links, and downloads.

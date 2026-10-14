@@ -10,7 +10,8 @@ DATA = json.loads((ROOT / 'data/five-run-summary.json').read_text())
 MODELS = DATA['models']
 JEV = DATA['jev']
 PUBLIC = 'https://github.com/FreecaseAI/moralitybench-data'
-STUDY = PUBLIC + '/tree/master/repeated-runs/2026-10-04'
+STUDY = PUBLIC + '/tree/master/repeated-runs/2026-10-14'
+ORIGINAL_STUDY = PUBLIC + '/tree/master/repeated-runs/2026-10-04'
 PAPER = PUBLIC + '/blob/master/paper/moralitybench.md'
 esc = html.escape
 
@@ -33,7 +34,7 @@ def render_leaderboard():
             category += '<small class="cell-note">Varied by run*</small>'
         rows.append(f'''<tr data-distance="{m['distance']}" data-agreement="{m['agreement']}">
           <td><span class="rank rank-{rank}">{rank}</span></td>
-          <th scope="row"><div class="model-name">{esc(m['name'])}</div><div class="model-provider">{esc(m['provider'])}</div></th>
+          <th scope="row"><div class="model-name">{esc(m['name'])}</div><div class="model-provider">{esc(m['provider'])} · {esc(m.get('collection_date','2026-10-04'))}</div></th>
           <td><strong>{show(m['distance'])}</strong><small class="cell-note" title="Lowest to highest distance across the five runs">{show(m['distance_min'])} to {show(m['distance_max'])}</small></td>
           <td><strong>{m['agreement']:.1f}%</strong></td>
           {cells}
@@ -47,18 +48,18 @@ def render_leaderboard():
     return f'''<section id="leaderboard">
   <div class="section-header">
     <h2>Leaderboard</h2>
-    <p>13 LLMs, each tested five times. Ranked by average distance from US human reference scores. Lower distance means a closer profile; it does not mean a better moral judgment.</p>
+    <p>{len(MODELS)} scored LLM configurations, each tested five times. Ranked by average distance from US human reference scores. Lower distance means a closer profile; it does not mean a better moral judgment.</p>
   </div>
   <div class="card-grid">
     <div class="card metric-card"><div class="metric-label">Closest on average</div><div class="metric-value" style="font-size:1.25rem">{esc(leader['name'])}</div><div class="metric-sub">Average distance: {show(leader['distance'])}</div></div>
     <div class="card metric-card"><div class="metric-label">Most repeatable with complete data</div><div class="metric-value" style="font-size:1.25rem">{esc(complete['name'])}</div><div class="metric-sub">{complete['agreement']:.1f}% agreement · 280/280 answers</div></div>
-    <div class="card metric-card"><div class="metric-label">EPQ group changed between runs</div><div class="metric-value">{changed} of 13</div><div class="metric-sub">Small score shifts can cross a category boundary</div></div>
+    <div class="card metric-card"><div class="metric-label">EPQ group changed between runs</div><div class="metric-value">{changed} of {len(MODELS)}</div><div class="metric-sub">Small score shifts can cross a category boundary</div></div>
     <div class="card metric-card"><div class="metric-label">Usable answers across five runs</div><div class="metric-value">{DATA['llm_numeric']:,} / {DATA['llm_scheduled']:,}</div><div class="metric-sub">Missing answers remain visible below</div></div>
   </div>
   <div class="results-guide" id="agreement-explainer">
     <p><strong>Agreement across 5 runs:</strong> We compare answers to the same question across every pair of runs. An 80% result means the answers matched in 8 out of 10 comparisons. Higher agreement means more repeatable answers, not more ethical answers.</p>
     <p><strong>Reading the scores:</strong> Distance, foundation scores, and EPQ scores are averages across five runs. The small numbers under distance show its lowest and highest values. Missing answers are excluded from both scoring and agreement; read the missing count alongside each percentage.</p>
-    <p class="chart-note">The original run and four additional runs are included. Models may have been served by different providers or backend versions. <a href="{STUDY}">Download the data and calculation details</a> · <a href="{PAPER}">Read the working paper</a></p>
+    <p class="chart-note">The original 13-model cohort was collected by October 4. GPT-6 Astra, Muse Wonder, and Gemini 4 Argon received five fresh administrations on October 14. Older models were not rerun. October 14 results use strict whole-answer integer parsing; older results retain their historical first-digit rule. Older agreement includes cross-time pairs, while the new trials ran concurrently in one session, so these are descriptive comparisons. Models may have been served by different providers or backend versions. <a href="{STUDY}">October 14 data and calculation details</a> · <a href="{ORIGINAL_STUDY}">Original five-run study</a> · <a href="{PAPER}">Read the working paper</a></p>
   </div>
   <div class="table-wrap" tabindex="0" role="region" aria-label="Five-run LLM leaderboard; scroll horizontally to see all scores">
     <table id="leaderboard-table" aria-describedby="agreement-explainer">
@@ -80,7 +81,7 @@ def render_jev():
     m = JEV
     foundation = ''.join(f'<span>{name} <strong>{show(v)}</strong></span>' for name, v in zip(DATA['foundations'], m['foundations']))
     return f'''<section id="jev-comparison" aria-labelledby="jev-heading">
-  <div class="section-header"><h2 id="jev-heading">Jev: A Non-LLM Comparison</h2><p>A structured decision model, evaluated separately from the 13 generative LLMs. Five runs are complete.</p></div>
+  <div class="section-header"><h2 id="jev-heading">Jev: A Non-LLM Comparison</h2><p>A structured decision model, evaluated separately from the {len(MODELS)} scored generative LLM configurations. Five runs are complete.</p></div>
   <div class="card">
     <div class="jev-copy"><p>TypeSafe describes Jev as a System One model. It returns structured scores, probabilities, and confidence values instead of generating a text answer. We tested the same 56 items five times using its separate questionnaire protocol.</p></div>
     <dl class="jev-summary">
@@ -96,20 +97,32 @@ def render_jev():
       <p><strong>Why it matters.</strong> A system that returns structured decisions can produce a repeatable questionnaire profile close to these human reference scores. That does not establish human-like beliefs or moral reasoning. Jev’s average Purity score is {show(m['foundations'][5])}, compared with the human reference of 2.26.</p>
       <p><strong>How to interpret it.</strong> Jev evaluated statements’ alignment with ethical principles in batches. The LLMs answered each question as an immediate self-description. Different prompts, interfaces, and score conversion prevent a controlled comparison of architectures, so Jev stays outside the LLM ranking and charts.</p>
     </div>
-    <p class="jev-sources"><a href="{STUDY}">Five-run source records and analysis</a> · <a href="https://typesafe.ai/blog/introducing-system-one-models-and-jev">About Jev</a></p>
+    <p class="jev-sources"><a href="{ORIGINAL_STUDY}">Five-run source records and analysis</a> · <a href="https://typesafe.ai/blog/introducing-system-one-models-and-jev">About Jev</a></p>
   </div>
 </section>'''
 
 
 def render_findings():
-    return '''<section id="findings">
-  <div class="section-header"><h2>Key Findings</h2><p>What changed when we asked the same questions five times.</p></div>
+    leader=MODELS[0]
+    complete=max((m for m in MODELS if m['missing']==0),key=lambda m:m['agreement'])
+    changed=[m['name'] for m in MODELS if m['category_changed']]
+    below=[m['name'] for m in MODELS if m['foundations'][5]<DATA['human_norms'][5]]
+    addition=DATA['latest_extension']
+    availability=addition.get('unscored_models',[])
+    strict={m['name']:m for m in addition.get('strict_models',[])}
+    gemini=strict.get('Gemini 4 Argon')
+    sensitivity=(f"""<p><strong>Gemini Argon: partial questionnaire.</strong> The leaderboard uses only {gemini['numeric']}/280 whole-answer integers; 125 responses are missing. The historical first-digit parser would also count 47 verbose responses about other frameworks, producing an erroneous mean Absolutist label. Those prose-derived digits are excluded here; the strict result is {esc(gemini['ideology'])} in all five runs. Equality and Authority are sparsely answered, so the score does not represent a complete questionnaire. <a href=\"{STUDY}/five-run-summary.json\">Inspect both parser calculations and item counts</a>. <a href="gemini-answers.html">Read Gemini’s original answers</a> · <a href="https://github.com/FreecaseAI/moralitybench-data/blob/master/repeated-runs/2026-10-14/gemini-instruction-addendum.md">Instruction-following addendum</a>.</p>""" if gemini else '')
+    note=''.join(f"<p><strong>{esc(m['name'])} is not ranked:</strong> {esc(m['reason'])}. Its raw responses and missing-answer counts are preserved in the October 14 release.</p>" for m in availability)
+    return f'''<section id="findings">
+  <div class="section-header"><h2>Key Findings</h2><p>Five-run profiles from two dated collections; older configurations were not retested.</p></div>
   <div class="findings-grid">
-    <div class="finding"><h4>DeepSeek leads on average, but the winner changes</h4><p>DeepSeek has the lowest five-run average distance (0.24), followed by MiMo (0.25). MiMo led in three of the four new runs. These close results do not establish a lasting winner.</p></div>
-    <div class="finding"><h4>Identical settings do not guarantee identical answers</h4><p>LLM agreement across all five runs ranges from 60.4% to 94.7%. Mistral has the highest percentage, with 31 missing answers out of 280. Among models with complete data, Llama has the highest agreement at 93.9%.</p></div>
-    <div class="finding"><h4>Four models changed EPQ group</h4><p>DeepSeek, MiMo, Qwen, and Claude crossed a category boundary between runs. The charts show average scores; the leaderboard flags these changes. A label near the midpoint can change after a small score shift.</p></div>
-    <div class="finding"><h4>The original Purity finding does not hold across repeats</h4><p>Every LLM exceeded the human Purity reference in the first run. Across five runs, DeepSeek averages 2.00, below the reference of 2.26. Four of the six Purity questions were replaced in this adapted instrument, which also limits the human comparison.</p></div>
+    <div class="finding"><h4>Closest observed average profile</h4><p>{esc(leader['name'])} has the lowest displayed mean distance ({leader['distance']:.3f}). This describes closeness to the selected human reference, not moral correctness.</p></div>
+    <div class="finding"><h4>Repeatability differs</h4><p>Scored model agreement ranges from {min(m['agreement'] for m in MODELS):.1f}% to {max(m['agreement'] for m in MODELS):.1f}%. Among configurations with complete data, {esc(complete['name'])} has the highest agreement ({complete['agreement']:.1f}%). Missing answers are excluded; read the published denominators.</p></div>
+    <div class="finding"><h4>{len(changed)} configurations changed EPQ group</h4><p>{esc(', '.join(changed))}. The charts show averages, which can hide category changes between runs.</p></div>
+    <div class="finding"><h4>Adaptation and missingness matter</h4><p>Profiles below the Purity reference: {esc(', '.join(below)) or 'none'}. Four of six Purity items were replaced. October 14 models use five fresh runs; prior rows retain their original collection. Nonanswers remain missing and do not imply neutral beliefs.</p></div>
   </div>
+  {sensitivity}
+  {note}
 </section>'''
 
 
@@ -123,8 +136,10 @@ def main():
     chart_models = [{key: m[key] for key in chart_fields} for m in MODELS]
     page, count = re.subn(r'const chartModels = \[.*?\];', lambda _: 'const chartModels = ' + json.dumps(chart_models, indent=2) + ';', page, count=1, flags=re.S)
     assert count == 1
+    page=page.replace('across 13 LLMs',f'across {len(MODELS)} LLMs').replace('asked 13 LLMs',f'asked {len(MODELS)} LLMs').replace('13 + Jev',f'{len(MODELS)} + Jev').replace('all 13 models',f'all {len(MODELS)} models').replace('All 13 models',f'All {len(MODELS)} models')
+    page=page.replace('We asked '+str(len(MODELS))+' LLMs the same 56 questions five times, using adapted moral psychology questionnaires.', 'We tested '+str(len(MODELS))+' LLM configurations on the same 56 questions five times, across October 4 and October 14 collections. Older configurations were not retested.')
     path.write_text(page)
-    print('Rendered 13 LLM rows, Jev, findings, and synchronized chart averages.')
+    print('Rendered current LLM rows, Jev, findings, and synchronized chart averages.')
 
 
 if __name__ == '__main__':
