@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-10-29
+
+- Added the four October 29 MFQ-2/EPQ configurations and expanded ranks, missing counts, agreement details and all three charts to 20 models.
+- Updated hero, metadata, collection history, methodology and source links for three dated cohorts, preserving all earlier values and Jev.
+- Kept Gemini’s original response viewer and October 14 parser-sensitivity links.
+- Added focused rendering checks for original, expanded and unscored-model collections; preserved styles, instruments and analytics.
+
 ## 2026-10-14
 
 - Revised website and response-viewer prose with the requested Humanizer skill; kept scores, quoted answers, links and chart behavior unchanged.
